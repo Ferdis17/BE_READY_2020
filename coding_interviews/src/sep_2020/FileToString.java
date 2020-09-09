@@ -9,8 +9,13 @@ import java.util.stream.Collectors;
 public class FileToString {
 
     public static void main(String[] args) throws IOException {
-        //with java 8 it's amazing, just one line.
+        //with java 8 just one line.
         String content = Files.lines(Paths.get("/Users/Ferdis/Documents/greeting.txt"), StandardCharsets.UTF_8).collect(Collectors.joining());
-        System.out.print(content);
+        System.out.println(content);
+
+        // java 7 guess is better
+        String contents = new String(Files.readAllBytes(Paths.get("/Users/Ferdis/Documents/greeting.txt")));
+        System.out.println(contents);
+
     }
 }
