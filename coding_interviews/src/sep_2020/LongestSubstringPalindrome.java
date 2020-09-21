@@ -1,6 +1,6 @@
 package sep_2020;
 
-public class LogestSubstringPlaendrome {
+public class LongestSubstringPalindrome {
 
 
     public static boolean isPalindrome(String s) {
