@@ -11,7 +11,7 @@ public class RepeatedString {
         System.out.println(repeatedString("aba", 10));
     }
     public static long repeatedString(String s, int n) {
-        if(null == s || s.length()<1){
+        if(null == s || s.length() < 1){
             return 0;
         }
         if (n == 0) {

@@ -2,7 +2,7 @@ package sep_2020;
 
 public class OneWayEdit {
     public static void main(String[] args) {
-        System.out.println(isOneWayEdit("Apple", "Apkle"));
+        System.out.println(isOneWayEdit("Apple", "Aple"));
     }
 
     public static boolean isOneWayEdit(String first, String second) {
@@ -23,12 +23,11 @@ public class OneWayEdit {
                 if(diffFound) {
                     return false;
                 }
-                diffFound =true;
+                diffFound = true;
             }
         }
         return true;
     }
-
     private static boolean oneEditInsert(String s, String t) {
         int index1 = 0;
         int index2 = 0;
@@ -37,7 +36,7 @@ public class OneWayEdit {
                 if(index1 != index2) {
                     return false;
                 }
-                index2 ++;
+                index1 ++;
             }else {
                 index1 ++;
                 index2 ++;
