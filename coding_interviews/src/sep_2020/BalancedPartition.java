@@ -24,7 +24,7 @@ public class BalancedPartition {
     }
 
     public static void main(String[] args) {
-        int arr[] = {3, 1, 5, 9, 12};
+        int[] arr = {3, 1, 5, 9, 12};
         int n = arr.length;
         if (findPartition(arr, n))
             System.out.println("Can be divided into two subsets of equal sum");
