@@ -8,12 +8,16 @@ public class StringCompression {
 
         for (int i = 0; i < string.length(); i++) {
             countConsecutive++;
-            if(i + 1 >= string.length() || string.charAt(i) != string.charAt(i - 1)) {
+            if(i + 1 >= string.length() || string.charAt(i) != string.charAt(i + 1)) {
                 compressed.append(string.charAt(i));
                 compressed.append(countConsecutive);
                 countConsecutive = 0;
             }
         }
         return compressed.length() < string.length() ? compressed.toString() : string;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(compress("aaabbbkknn"));
     }
 }

@@ -7,10 +7,12 @@ public class CountSubString {
         int N = str.length();
         int count = 0;
 
+
+
         /* A loop to slide subString[] one by one */
         for (int i = 0; i <= N - M; i++) {
-            /* For current index i, check for
-        pattern match */
+
+            /* For current index i, check for pattern match */
           int j;
             for (j = 0; j < M; j++) {
                 if (str.charAt(i + j) != subString.charAt(j)) {
@@ -21,7 +23,6 @@ public class CountSubString {
             // if subString[0...M-1] = str[i, i+1, ...i+M-1]
             if (j == M) {
                 count++;
-                j = 0;
             }
         }
         return count;
