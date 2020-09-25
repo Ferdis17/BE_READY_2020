@@ -1,5 +1,7 @@
 package sep_2020;
 
+import java.util.LinkedList;
+
 public class ReturnKthToLast {
 
     static class Node{
@@ -55,6 +57,65 @@ public class ReturnKthToLast {
         System.out.println(n +"th element from the last is " +temp.value);
     }
 
+    // partition a linkedlist around a given element
+
+    public static Node partition(Node node, int x) {
+        Node head = node;
+        Node tail = node;
+
+        while (node != null) {
+            Node next = node.next;
+            if(node.value < x) {
+                node.next = head;
+                head = node;
+            } else {
+                tail.next = node;
+                tail = node;
+            }
+            node = next;
+        }
+        tail.next = null;
+        return head;
+    }
+
+    // using two linkedList and join them after
+
+    public static Node partitionTwo(Node node, int x) {
+        Node beforeStart = null;
+        Node beforeEnd = null;
+        Node afterStart = null;
+        Node afterEnd = null;
+
+        while (node != null) {
+            Node next = node.next;
+            node.next = null;
+            if(node.value < x) {
+                if(beforeStart == null) {
+                    beforeStart = node;
+                    beforeEnd = beforeStart;
+                } else {
+                    beforeEnd.next = node;
+                    beforeEnd = node;
+                }
+            } else {
+                if (afterStart == null) {
+                    afterStart = node;
+                    afterEnd = afterStart;
+                } else  {
+                    afterEnd.next = node;
+                    afterEnd = node;
+                }
+            }
+            node = next;
+        }
+        if (beforeStart == null) {
+            return afterStart;
+        }
+        beforeEnd.next = afterStart;
+
+        return beforeStart;
+    }
+
     public static void main(String[] args) {
         ReturnKthToLast ob = new ReturnKthToLast();
         Node start = new Node(12);
@@ -71,6 +132,10 @@ public class ReturnKthToLast {
         ob.printKthToLast(start, 5);
 
         ob.printNthFromLast(start, 2);
+
+        partition(start, 11);
+        partitionTwo(start, 11);
+        displayElements(start);
 
     }
 }
