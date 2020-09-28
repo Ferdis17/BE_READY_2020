@@ -8,7 +8,7 @@ public class CopyFileToAnother {
 
     public static void main(String[] args) throws IOException {
         FileInputStream origin = new FileInputStream("/Users/Ferdis/Documents/greeting.txt");
-        FileOutputStream destination = new FileOutputStream("/Users/Ferdis/Desktop/copyFile.txt");
+        FileOutputStream destination = new FileOutputStream("/Users/Ferdis/Desktop/copyFile.txt", true);
 
         int b;
         while ((b = origin.read()) != -1)
