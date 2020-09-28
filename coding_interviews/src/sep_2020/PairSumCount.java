@@ -1,7 +1,6 @@
 package sep_2020;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class PairSumCount {
 
@@ -21,7 +20,7 @@ public class PairSumCount {
         return pairCount;
     }
 
-    public static int pairSumCountMap(int [] arr, int sum){
+    public static int pairSumCountMap(ArrayList<Integer> arr, int sum){
         int pairCount = 0;
         Map<Integer, Integer> map = new HashMap<>();
 
@@ -44,7 +43,7 @@ public class PairSumCount {
         return pairCount/2;
     }
     public static void main(String[] args) {
-        System.out.println(pairSumCountMap(new int[]{1, 5, 7, -1, 5}, 6));
+        System.out.println(pairSumCountMap(new ArrayList<Integer>( Arrays.asList(1, 5, 7, -1, 5)), 6));
         System.out.println(pairSumCount(new int[]{1, 5, 7, -1, 5}, 6));
     }
 }
