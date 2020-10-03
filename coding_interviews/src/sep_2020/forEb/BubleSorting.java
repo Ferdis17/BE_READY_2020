@@ -4,7 +4,7 @@ public class BubleSorting {
 
     public static void bubleSortArray(int[] arr){
 
-        int temp = 0;
+        int temp;
         // ascending order
         for(int i = 0; i < arr.length; i++){
             for(int j = i+1; j < arr.length; j ++){
@@ -13,7 +13,6 @@ public class BubleSorting {
                     arr[j] = arr[i];
                     arr[i] = temp;
                 }
-
             }
         }
         for (int i : arr) {
@@ -22,6 +21,6 @@ public class BubleSorting {
     }
 
     public static void main(String[] args) {
-        bubleSortArray(new int[]{3,2,8,1,9,10,4,7,0});
+        bubleSortArray(new int[]{3,1,2,8,9,10,4,7,0});
     }
 }
