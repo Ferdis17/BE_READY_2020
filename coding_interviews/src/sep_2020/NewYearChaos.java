@@ -7,7 +7,7 @@ public class NewYearChaos {
         int temp = 0, count = 0, check =0;
         int[] bribe = new int[1000000];
         boolean isSorted = false;
-        while(isSorted != true){
+        while(!isSorted){
             isSorted = true;
             for(int i=q.length-1; i>0 ; --i){
                 if(q[i] < q[i-1]){

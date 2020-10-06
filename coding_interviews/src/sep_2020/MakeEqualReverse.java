@@ -1,5 +1,7 @@
 package sep_2020;
 
+import java.util.Arrays;
+
 /**
  * Reverse to Make Equal
  * Given two arrays A and B of length N, determine if there is a way to make A equal to B by reversing any subarrays from array B any number of times.
@@ -34,14 +36,15 @@ public class MakeEqualReverse {
                 j++;
             }
         }
-       int [] reversed =  new int[subArray.length];
-            int n =  reversed.length;
-            for (int i = 0; i < subArray.length; i++) {
-                reversed[n-1] = subArray[i];
-                n --;
-            }
+//       int [] reversed =  new int[subArray.length];
+//            int n =  reversed.length;
+//            for (int i = 0; i < subArray.length; i++) {
+//                reversed[n-1] = subArray[i];
+//                n --;
+//            }
+        Arrays.sort(subArray);
         for (int i = start; i < end+1; i++ ) {
-            array_b[i] = reversed[i-1];
+            array_b[i] = subArray[i-1];
         }
 
         for (int i = 0; i < array_a.length; i++) {
