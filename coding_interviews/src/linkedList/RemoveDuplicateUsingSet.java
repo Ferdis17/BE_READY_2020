@@ -1,4 +1,4 @@
-package sep_2020;
+package linkedList;
 
 import sep_2020.dataStructure.LRUWithLinkedListAndHashMap;
 
@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * this is will have O(n) running time
  */
-public class RemoveDupsLinkedList {
+public class RemoveDuplicateUsingSet {
     // using extra data structure
     public static void deleteDuplicates (Node head) {
         Set<Integer> set = new HashSet<>();
