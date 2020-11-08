@@ -2,6 +2,7 @@ package linkedList;
 
 public class DeleteMiddleNode {
 
+    Node head;
     static class Node{
         int value;
         Node next;
@@ -10,15 +11,21 @@ public class DeleteMiddleNode {
         }
     }
 
-    static boolean deleteMiddleNode(Node n){
+    static Node deleteMiddleNode(Node n){
 
         if(n == null || n.next == null) {
-            return false;
+            return null;
         }
         Node next = n.next;
         n.value = next.value;
         n.next = next.next;
-        return true;
+        return next;
+    }
+
+    public void push(int value) {
+        Node node = new Node(value);
+        node.next = head;
+        head = node;
     }
     public static void displayElements(Node head){
         while ( head != null) {
@@ -27,18 +34,22 @@ public class DeleteMiddleNode {
         }
     }
     public static void main(String[] args) {
+        DeleteMiddleNode add = new DeleteMiddleNode();
+        add.push(12);
+        add.push(13);
+        add.push(11);
+        add.push(23);
+        add.push(42);
+        add.push(15);
+        add.push(10);
 
-        Node start = new Node(12);
-        start.next = new Node(13);
-        start.next.next = new Node(11);
-        start.next.next.next = new Node(23);
-        start.next.next.next.next = new Node(42);
-        start.next.next.next.next.next = new Node(15);
-        start.next.next.next.next.next.next = new Node(10);
+        System.out.println("before deleting a node");
+        displayElements(add.head);
 
-        System.out.println(deleteMiddleNode(start.next.next.next.next.next.next));
+        System.out.println("after deleting a node");
+        System.out.println(deleteMiddleNode(add.head.next.next));
 
-        displayElements(start);
+        displayElements(add.head);
 
 
     }
