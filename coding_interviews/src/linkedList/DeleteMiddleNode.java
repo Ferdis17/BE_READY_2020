@@ -5,6 +5,13 @@ import java.util.List;
 
 public class DeleteMiddleNode {
 
+
+
+    void show(){
+        System.out.println(data);
+    }
+    int data;
+
     Node head;
     static class Node{
         int value;
@@ -86,6 +93,35 @@ public class DeleteMiddleNode {
         System.out.println("after deleting a node");
         System.out.println(deleteMiddleNode(add.head.next.next));
         displayElements(add.head);
+
+        int a =9, b =2;
+        float f = a/b;
+
+        System.out.println(f);
+       f =  f/2;
+        System.out.println(f);
+        f = a+b/f;
+        System.out.println(f);
+
+        Runnable r = () -> System.out.println("H");
+        new Thread(r).start();
+
+        int x = 0;
+        add.show();
+
+        Integer t = 3;
+        Integer y = null;
+
+        try {
+            System.out.println(Integer.compareUnsigned(x,3) == 0 || Integer.compareUnsigned(y, 0) == 0);
+        } catch ( Exception ex) {
+            System.out.println(ex.getClass().toString());
+        } try {
+            System.out.println(y.compareTo(null) == 0 || true );
+        } catch ( Exception ex) {
+            System.out.println(ex.getClass().toString());
+        }
+
     }
 
 }
