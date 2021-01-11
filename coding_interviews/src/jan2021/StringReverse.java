@@ -27,6 +27,7 @@ public class StringReverse {
 
         }
 
+
         System.out.println(" even =" + even);
         System.out.println( " odd = " + odd);
 
