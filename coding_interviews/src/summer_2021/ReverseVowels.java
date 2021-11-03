@@ -32,7 +32,7 @@ public class ReverseVowels {
              j--;
          }
 
-         return String.copyValueOf(chars);
+         return String.valueOf(chars);
      }
 
     public static void main(String[] args) {
